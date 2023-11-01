@@ -4,48 +4,48 @@ wordList = 'Fortune Temperance Justice Magician Judgement Devil Death Jester Aeo
 
 # VARIABLE_NAMES that are ALL CAPS are CONSTANTS not meant to change.
 HANGMAN_BOARD = ['''
-    +----+
-          |
-          |     
-          |       
-          |       
-         ====''', ''' 
-    +----+
-    0     |
-          |     
-          |       
-          |       
-         ====''', ''' 
-    +----+
-    0     |
-    |     |     
-          |       
-          |       
-         ====''', '''
-    +----+
-    0     |
-   /|     |     
-          |       
-          |       
-         ====''', '''
-    +----+
-    0     |
-   /|\    |     
-          |       
-          |       
-         ====''', ''' 
-    +----+
-    0     |
-   /|\    |     
-   /      |       
-          |       
-         ====''', '''     
-    +----+
-    0     |
-   /|\    |     
-   / \    |       
-          |       
-         ====''']                     
++----+
+      |
+      |     
+      |       
+      |       
+     ===''', ''' 
++----+
+0     |
+      |     
+      |       
+      |       
+     ===''', ''' 
++----+
+0     |
+|     |     
+      |       
+      |       
+     ===''', '''
+ +----+
+ 0     |
+/|     |     
+       |       
+       |       
+      ===''', '''
++----+
+ 0    |
+/|\   |     
+      |       
+      |       
+     ===''', ''' 
++----+
+ 0    |
+/|\   |     
+/     |       
+      |       
+     ===''', '''     
++----+
+ 0    |
+/|\   |     
+/ \   |       
+      |       
+     ===''']                     
 
 def getRandomWord(wordList):
     wordIndex = random.randint(0, len(wordList) -1)
@@ -53,7 +53,11 @@ def getRandomWord(wordList):
     # print(wordIndex)
     return wordList[wordIndex]
 
-i = 0
-while i < 500000:
-     getRandomWord(wordList)
-     i += 1
+def displayBoard(incorrectLetters, correctLetters, secretWord):
+    print(HANGMAN_BOARD[len(incorrectLetters)])
+    print()
+
+# i = 0
+# while i < 500000:
+#      getRandomWord(wordList)
+#      i += 1
