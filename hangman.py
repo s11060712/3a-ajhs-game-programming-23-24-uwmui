@@ -125,7 +125,14 @@ while True: # 99% of the time the loop is done this way.
         if foundAllLetters:
             print('Congratulations! You have guessed correctly.\n')
             gameIsDone = True
+    else: # MISSED LETTER GUESS
+        missedLetters = missedLetters + guess
 
+        if len(missedLetters) == len(HANGMAN_BOARD) - 1:
+            displayBoard(missedLetters, correctLetters, secretWord)
+            print('You have lost due to using all guess.\n')
+            print('The secret word was ' + secretWord)
+            gameIsDone = True
 
 
 
