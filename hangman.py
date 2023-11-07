@@ -67,7 +67,7 @@ def displayBoard(missedLetters, correctLetters, secretWord):
     blanks = '_' * len(secretWord)
     for i in range(len(secretWord)):
            if secretWord[i] in correctLetters:
-                blanks = blanks[:i] + secretWord[i] + blanks[i+1]
+                blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
                 # The : character is used to SLICE strings into pieces.
                 # [i] means slice from the start until index i
                 # [i+1:] means slice from i+1 until the END
@@ -134,6 +134,14 @@ while True: # 99% of the time the loop is done this way.
             print('The secret word was ' + secretWord)
             gameIsDone = True
 
+    if gameIsDone: 
+        if playAgain():
+            secretWord = getRandomWord(wordList)
+            missedLetters = ''
+            correctLetters = ''
+            gameIsDone = False
+        else: 
+            break
 
 
 
